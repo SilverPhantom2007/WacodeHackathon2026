@@ -1,5 +1,5 @@
 import { Link } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, Button, StyleSheet, Text, View } from 'react-native';
 
 export default function Index() {
   return (
@@ -8,6 +8,10 @@ export default function Index() {
       <Link href="/about" style={styles.button}>
         Go to Settings
       </Link>
+      <Button
+        title="Press me"
+        onPress={() => Alert.alert('Button pressed')}
+      />
     </View>
   );
 }
