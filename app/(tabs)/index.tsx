@@ -1,7 +1,6 @@
 import * as Location from 'expo-location';
-import { Link } from 'expo-router';
 import { useState } from 'react';
-import { Alert, TouchableOpacity, StyleSheet, Text, View } from 'react-native';
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
   // begin chatgpt code
@@ -56,8 +55,8 @@ const sendSMS = async () => {
   //     />
   //   </View>
   // );
-}
 
+  
 export default function PlayScreen() {
   const [score, setScore] = useState(0);
 
