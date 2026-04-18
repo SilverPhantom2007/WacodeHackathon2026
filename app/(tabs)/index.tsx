@@ -15,13 +15,33 @@ export default function Index() {
       }
 
       // 2. Get current position
-      const loc = await Location.getCurrentPositionAsync({});
+      let loc = null;
+      try {
+        loc = await Location.getCurrentPositionAsync({
+          accuracy: Location.Accuracy.High,
+        });
+      } catch (e) {}
+
+      if (!loc) {
+        loc = await Location.getLastKnownPositionAsync();
+      }
+
+      if (!loc) {
+        loc = await Location.getCurrentPositionAsync({
+          accuracy: Location.Accuracy.Balanced,
+        }).catch(() => null);
+      }
+
+      if (!loc) {
+        Alert.alert('Location unavailable');
+        return;
+      }
       const { latitude, longitude } = loc.coords;
 
-      const message = 'I\'m feeling unsafe. Here\'s my location: https://maps.google.com/?q=${latitude},${longitude}';
-
+      const message = `I'm feeling unsafe. Here's my location: https://maps.google.com/?q=${latitude},${longitude}`;
+      //Alert.alert(message);
       const accountSid = 'AC9f211060be3505daaa587a5980624b7f';
-      const authToken = 'e17c37f39b8495238a683b4a162fef94';
+      const authToken = '';
 
       const twilioNumber = '+18884169963'; // your Twilio number
       const toNumber = '+18777804236';     // verified number (trial restriction)
