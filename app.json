@@ -2,7 +2,7 @@
   "expo": {
     "name": "Wacode2026",
     "slug": "Wacode2026",
-    "owner": "lila-8",
+    "owner": "silverphantom07",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -12,7 +12,6 @@
     "ios": {
       "supportsTablet": true
     },
-    
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#FFFFFF",
@@ -44,7 +43,7 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "1d556649-8282-4a69-b473-17327850d40b"
+        "projectId": "15acd490-a35d-4fff-a4f0-3890ae6bfdb5"
       }
     }
   }

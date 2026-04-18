@@ -1,21 +1,36 @@
+import * as Location from 'expo-location';
 import { Link } from 'expo-router';
 import { Alert, Button, StyleSheet, Text, View } from 'react-native';
 
 export default function Index() {
   // begin chatgpt code
   const sendSMS = async () => {
-    const accountSid = 'AC9f211060be3505daaa587a5980624b7f';
-    const authToken = 'e17c37f39b8495238a683b4a162fef94';
-
-    const twilioNumber = '+18884169963'; // your Twilio number
-    const toNumber = '+18777804236';     // verified number (trial restriction)
-
-    const body = new URLSearchParams();
-    body.append('To', toNumber);
-    body.append('From', twilioNumber);
-    body.append('Body', 'I\'m feeling unsafe. Here\'s my location: ');
+      
 
     try {
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        Alert.alert('Location permission denied');
+        return;
+      }
+
+      // 2. Get current position
+      const loc = await Location.getCurrentPositionAsync({});
+      const { latitude, longitude } = loc.coords;
+
+      const message = 'I\'m feeling unsafe. Here\'s my location: https://maps.google.com/?q=${latitude},${longitude}';
+
+      const accountSid = 'AC9f211060be3505daaa587a5980624b7f';
+      const authToken = 'e17c37f39b8495238a683b4a162fef94';
+
+      const twilioNumber = '+18884169963'; // your Twilio number
+      const toNumber = '+18777804236';     // verified number (trial restriction)
+
+      const body = new URLSearchParams();
+      body.append('To', toNumber);
+      body.append('From', twilioNumber);
+      body.append('Body', message);
+
       const response = await fetch(
         `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`,
         {
