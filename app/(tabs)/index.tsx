@@ -129,14 +129,14 @@ const styles = StyleSheet.create({
     marginBottom: 24 
   },
   btn: { 
-    width: 150, 
-    height: 150, 
+    width: 250, 
+    height: 250, 
     borderRadius: 75, 
     overflow: 'hidden' 
   },
   baklavaImage: { 
-    width: 150, 
-    height: 150, 
+    width: 250, 
+    height: 250, 
     alignItems: 'center'
   },
 });
