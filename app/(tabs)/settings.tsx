@@ -43,7 +43,7 @@ export default function SettingsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#1a1f0f' },
+  container: { flex: 1, backgroundColor: '#49572b' },
   scroll: { padding: 20, gap: 8 },
   title: { color: '#c9a84c', fontSize: 18, fontWeight: '600', letterSpacing: 4, textAlign: 'center', marginBottom: 24 },
   label: { fontSize: 10, color: '#6a7a4a', letterSpacing: 1.5, marginBottom: 6, marginLeft: 4 },
