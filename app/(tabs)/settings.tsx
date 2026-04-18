@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function SettingsScreen() {
@@ -9,7 +9,6 @@ export default function SettingsScreen() {
   
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scroll}>
 
         <Text style={styles.title}>SETTINGS</Text>
 
@@ -37,14 +36,12 @@ export default function SettingsScreen() {
           />
         </View>
 
-      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#49572b' },
-  scroll: { padding: 20, gap: 8 },
   title: { color: '#c9a84c', fontSize: 25, fontWeight: '600', letterSpacing: 4, textAlign: 'center', marginBottom: 24 },
   label: { fontSize: 20, color: '#c9a84c', letterSpacing: 1.5, marginBottom: 6, marginLeft: 4 },
   section: { backgroundColor: '#232b14', borderWidth: 1, borderColor: '#3a4a20', borderRadius: 12, padding: 14, marginBottom: 20 },
