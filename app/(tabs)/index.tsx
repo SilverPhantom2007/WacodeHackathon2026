@@ -1,6 +1,6 @@
 import * as Location from 'expo-location';
 import { useState } from 'react';
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
   // begin chatgpt code
@@ -74,10 +74,12 @@ export default function PlayScreen() {
 
       <View style={styles.center}>
         <Text style={styles.score}>{score}</Text>
-        <Text style={styles.label}>CLICKS</Text>
 
         <TouchableOpacity style={styles.btn} onPress={() => setScore(s => s + 1)}>
-          <Text style={{ fontSize: 56 }}>🥐</Text>
+          <Image
+            source={require('../../assets/images/favicon.png')}
+            style={styles.baklavaImage} 
+          />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -92,21 +94,21 @@ const styles = StyleSheet.create({
   topBar: { 
     flexDirection: 'row', 
     justifyContent: 'space-between', 
-    padding: 16 
+    padding: 10 
   },
   pill: { 
     backgroundColor: '#232b14', 
     borderWidth: 1, 
     borderColor: '#3a4a20', 
-    borderRadius: 10, 
-    paddingHorizontal: 14, 
+    borderRadius: 20, 
+    paddingHorizontal: 10, 
     paddingVertical: 7, 
     minWidth: 52, 
     alignItems: 'center' 
   },
   pillText: { 
     color: '#8fbc5a', 
-    fontSize: 13, 
+    fontSize: 16, 
     fontWeight: '500' 
   },
   center: { 
@@ -134,6 +136,7 @@ const styles = StyleSheet.create({
   },
   baklavaImage: { 
     width: 150, 
-    height: 150 
+    height: 150, 
+    alignItems: 'center'
   },
 });
