@@ -35,7 +35,7 @@ export default function TabLayout() {
   <Tabs.Screen
         name="index"
         options={{
-          title: 'BAKLAVA',
+          title: 'CLICK THE BAKLAVA',
           tabBarLabel: 'PLAY',
           tabBarIcon: ({ color }) => (
             <MaterialIcons name="sports-esports" size={22} color={color} />
