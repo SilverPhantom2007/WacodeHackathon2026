@@ -10,8 +10,6 @@ export default function SettingsScreen() {
   return (
     <SafeAreaView style={styles.container}>
 
-        <Text style={styles.title}>SETTINGS</Text>
-
         <Text style={styles.label}>EMERGENCY CONTACT</Text>
         <View style={styles.section}>
           <TextInput
@@ -46,10 +44,9 @@ export default function SettingsScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#49572b' },
-  title: { color: '#c9a84c', fontSize: 25, fontWeight: '600', letterSpacing: 4, textAlign: 'center', marginBottom: 24 },
   label: { fontSize: 20, color: '#c9a84c', letterSpacing: 1.5, marginBottom: 6, marginLeft: 4 },
-  section: { backgroundColor: '#232b14', borderWidth: 1, borderColor: '#3a4a20', borderRadius: 12, padding: 14, marginBottom: 20 },
-  input: { fontSize: 18, color: '#e8f0d0' },
+  section: { backgroundColor: '#232b14', borderWidth: 1, borderColor: '#3a4a20', borderRadius: 12, padding: 8, marginBottom: 16 },
+  input: { fontSize: 15, color: '#e8f0d0' },
   multiline: { height: 80, textAlignVertical: 'top' },
   topBar: { 
     flexDirection: 'row', 
