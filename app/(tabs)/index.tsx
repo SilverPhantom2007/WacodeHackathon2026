@@ -56,16 +56,19 @@ const sendSMS = async () => {
   //   </View>
   // );
 
-  // begin claude code
+  
 export default function PlayScreen() {
   const [score, setScore] = useState(0);
+  const [emergency, setEmergency] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.topBar}>
-        <TouchableOpacity style={styles.pill} onPress={sendSMS}>
-          <Text style={styles.pillText}>x2</Text>
+        <TouchableOpacity style={[styles.pill, emergency && styles.pillRed]} onPress={() => { setEmergency(e => !e); sendSMS(); }}>
+          <Text style={[styles.pillText, emergency && styles.pillTextRed]}>x2</Text>
         </TouchableOpacity>
+
+        <Text style={styles.title}>BAKLAVA</Text>
 
         <View style={styles.pill}>
           <Text style={styles.pillText}>{score}</Text>
@@ -81,6 +84,8 @@ export default function PlayScreen() {
             style={styles.baklavaImage} 
           />
         </TouchableOpacity>
+
+        <Text style={styles.hint}>tap the baklava</Text>
       </View>
     </SafeAreaView>
   );
@@ -89,12 +94,18 @@ export default function PlayScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#1a1f0f' 
+    backgroundColor: '#def3b8' 
   },
   topBar: { 
     flexDirection: 'row', 
     justifyContent: 'space-between', 
     padding: 10 
+  },
+  title: {
+    color: '#c9a84c',
+    fontSize: 18,
+    fontWeight: '600',
+    letterSpacing: 4,
   },
   pill: { 
     backgroundColor: '#232b14', 
@@ -106,10 +117,17 @@ const styles = StyleSheet.create({
     minWidth: 52, 
     alignItems: 'center' 
   },
-  pillText: { 
-    color: '#8fbc5a', 
-    fontSize: 16, 
-    fontWeight: '500' 
+  pillRed: {
+    backgroundColor: '#3d1a1a',
+    borderColor: '#c0392b',
+  },
+  pillText: {
+    color: '#8fbc5a',
+    fontSize: 14,
+    fontWeight: '600',
+  },
+  pillTextRed: {
+    color: '#ff6b6b',
   },
   center: { 
     flex: 1, 
@@ -120,7 +138,7 @@ const styles = StyleSheet.create({
   score: { 
     fontSize: 72, 
     fontWeight: '500', 
-    color: '#e8f0d0' 
+    color: '#c9a84c' 
   },
   label: { 
     fontSize: 11, 
@@ -139,5 +157,10 @@ const styles = StyleSheet.create({
     height: 250, 
     alignItems: 'center'
   },
+  hint: {
+    marginTop: 16,
+    fontSize: 12,
+    color: '#3a4a20',
+    letterSpacing: 2,
+  },
 });
-// end claude code
