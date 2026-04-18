@@ -1,8 +1,6 @@
 import { Tabs } from 'expo-router';
 
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import Ionicons from '@expo/vector-icons/Ionicons';
-
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function TabLayout() {
   return (
@@ -34,13 +32,13 @@ export default function TabLayout() {
   }}
 >
 
-      <Tabs.Screen
+  <Tabs.Screen
         name="play"
         options={{
           title: 'BAKLAVA',
           tabBarLabel: 'PLAY',
-          tabBarIcon: ({ color, focused }) => (
-            <FontAwesome5 name="gamepad" size={24} color={color} />
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="sports-esports" size={22} color={color} />
           ),
         }}
       />
@@ -49,8 +47,8 @@ export default function TabLayout() {
         options={{
           title: 'SETTINGS',
           tabBarLabel: 'SETTINGS',
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name="settings-outline" size={24} color={color} />
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="settings" size={22} color={color} />
           ),
         }}
       />
