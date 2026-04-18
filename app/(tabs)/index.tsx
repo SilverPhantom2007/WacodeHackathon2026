@@ -5,8 +5,6 @@ import { Alert, Button, StyleSheet, Text, View } from 'react-native';
 export default function Index() {
   // begin chatgpt code
   const sendSMS = async () => {
-      
-
     try {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
@@ -78,7 +76,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Home screen</Text>
-      <Link href="/about" style={styles.button}>
+      <Link href="/settings" style={styles.button}>
         Go to Settings
       </Link>
       <Button
