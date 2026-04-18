@@ -2,17 +2,18 @@ import { Link } from 'expo-router';
 import { Alert, Button, StyleSheet, Text, View } from 'react-native';
 
 export default function Index() {
+  // begin chatgpt code
   const sendSMS = async () => {
-    const accountSid = 'YOUR_ACCOUNT_SID';
-    const authToken = 'YOUR_AUTH_TOKEN';
+    const accountSid = 'AC9f211060be3505daaa587a5980624b7f';
+    const authToken = 'e17c37f39b8495238a683b4a162fef94';
 
-    const twilioNumber = '+1234567890'; // your Twilio number
-    const toNumber = '+1234567890';     // verified number (trial restriction)
+    const twilioNumber = '+18884169963'; // your Twilio number
+    const toNumber = '+18777804236';     // verified number (trial restriction)
 
     const body = new URLSearchParams();
     body.append('To', toNumber);
     body.append('From', twilioNumber);
-    body.append('Body', 'Hello from Expo');
+    body.append('Body', 'I\'m feeling unsafe. Here\'s my location: ');
 
     try {
       const response = await fetch(
@@ -32,12 +33,12 @@ export default function Index() {
         throw new Error('Twilio request failed');
       }
 
-      Alert.alert('SMS sent');
+      //Alert.alert('SMS sent');
     } catch (err) {
       console.error(err);
       Alert.alert('Failed to send SMS');
     }
-  };
+  }; // end chatgpt code
 
   return (
     <View style={styles.container}>
@@ -47,7 +48,7 @@ export default function Index() {
       </Link>
       <Button
         title="Press me"
-        onPress={() => Alert.alert('Button pressed')}
+        onPress={sendSMS}
       />
     </View>
   );
