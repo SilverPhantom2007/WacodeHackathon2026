@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
   // begin chatgpt code
 const accountSid = 'AC9f211060be3505daaa587a5980624b7f';
-const authToken = 'e17c37f39b8495238a683b4a162fef94';
+const authToken = '';
 const twilioNumber = '+18884169963';
 const toNumber = '+18777804236';
 
