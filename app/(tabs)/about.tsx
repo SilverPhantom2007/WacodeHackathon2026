@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function AboutScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Settings</Text>
+      <Text style={styles.text}>Phone Number</Text>
+      <TextInput>Input</TextInput>
     </View>
   );
 }
