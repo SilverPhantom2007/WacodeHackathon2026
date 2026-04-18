@@ -6,9 +6,9 @@ export default function TabLayout() {
   return (
     <Tabs
   screenOptions={{
-    //tabBarActiveTintColor: '#ffd33d',
+    tabBarActiveTintColor: '#ffd33d',
     headerStyle: {
-      backgroundColor: '#1a1f0f',
+      backgroundColor: '#54672b',
     },
     headerShadowVisible: false,
     headerTintColor: '#e8f0d0',
@@ -17,12 +17,12 @@ export default function TabLayout() {
       fontWeight: '500',
     },
     tabBarStyle: {
-      backgroundColor: '#0f1208',
-      borderTopColor: '#3a4a20',
+      backgroundColor: '#3e4c1e',
+      borderTopColor: '#2d4506',
       borderTopWidth: 1,
       height: 60,
     },
-    tabBarActiveTintColor: '#8fbc5a',
+    //tabBarActiveTintColor: '#8fbc5a',
     tabBarInactiveTintColor: '#5a6640',
     tabBarLabelStyle: {
       fontSize: 9,
