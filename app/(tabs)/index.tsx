@@ -2,10 +2,10 @@ import * as Location from 'expo-location';
 import { useState } from 'react';
 import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { smsMessage } from '../../shared/message.js';
 
-  // begin chatgpt code
 const accountSid = 'AC9f211060be3505daaa587a5980624b7f';
-const authToken = '';
+const authToken = '74e15ea5ba223a86c831ab95c52fcfa7';
 const twilioNumber = '+18884169963';
 const toNumber = '+18777804236';
 
@@ -19,8 +19,9 @@ const sendSMS = async () => {
 
     const loc = await Location.getCurrentPositionAsync({});
     const { latitude, longitude } = loc.coords;
-    const message = `I'm feeling unsafe. Here's my location: https://maps.google.com/?q=${latitude},${longitude}`;
-
+    //const message = `I'm feeling unsafe. Here's my location: https://maps.google.com/?q=${latitude},${longitude}`;
+    const message = `${smsMessage} https://maps.google.com/?q=${latitude},${longitude}`;
+    //Alert.alert(message);
     const body = new URLSearchParams();
     body.append('To', toNumber);
     body.append('From', twilioNumber);

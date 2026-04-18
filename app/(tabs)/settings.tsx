@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { setSmsMessage, smsMessage } from '../../shared/message';
 
 export default function SettingsScreen() {
   const [contact, setContact] = useState('');
-  const [message, setMessage] = useState("I'm feeling unsafe. Here's my location:");
-
+  const [text, setText] = useState(smsMessage);
   
   return (
     <SafeAreaView style={styles.container}>
@@ -31,13 +31,13 @@ export default function SettingsScreen() {
             placeholder="Your message..."
             placeholderTextColor="#6a7a4a"
             multiline
-            value={message}
-            onChangeText={setMessage}
+            value={text}
+            onChangeText={setText}
           />
         </View>
         
-        <TouchableOpacity style={[styles.pill, styles.pillRed]} onPress={() => { }}>
-                  <Text style={[styles.pillText, styles.pillTextRed]}>x2</Text>
+        <TouchableOpacity style={styles.pill} onPress={() => setSmsMessage(text)}>
+                  <Text style={styles.input}>Save</Text>
                 </TouchableOpacity>
 
     </SafeAreaView>
