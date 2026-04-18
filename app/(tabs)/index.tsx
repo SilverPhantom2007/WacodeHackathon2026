@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { smsMessage } from '../../shared/message.js';
 
 const accountSid = 'AC9f211060be3505daaa587a5980624b7f';
-const authToken = '74e15ea5ba223a86c831ab95c52fcfa7';
+const authToken = '';
 const twilioNumber = '+18884169963';
 const toNumber = '+18777804236';
 
