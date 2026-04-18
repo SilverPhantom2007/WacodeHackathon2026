@@ -56,7 +56,7 @@ const sendSMS = async () => {
   //   </View>
   // );
 
-  
+  // begin claude code
 export default function PlayScreen() {
   const [score, setScore] = useState(0);
 
@@ -140,3 +140,4 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 });
+// end claude code
